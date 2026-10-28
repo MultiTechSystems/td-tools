@@ -973,7 +973,7 @@ def _byte_length(raw: Any) -> int:
     """Turn a source ``length`` into a :data:`vocab.BYTE_LENGTH` byte count.
 
     ``length: remaining`` consumes everything from the read position to the end
-    of the payload (PS-014). It becomes ``-1``, the sentinel the form vocabulary
+    of the payload. It becomes ``-1``, the sentinel the form vocabulary
     already defines for it and the one the reference interpreter maps the keyword
     onto, so the field converts instead of taking its device out of the catalog.
 
@@ -999,7 +999,7 @@ def _enum(field: dict[str, Any]) -> dict[int, Any] | None:
         return dict(enumerate(raw))
     if isinstance(raw, dict):
         # A table may carry a ``default`` label covering every value it does not
-        # list (PS-269). ``lorav:valueMap`` pairs one wire value with one decoded
+        # list. ``lorav:valueMap`` pairs one wire value with one decoded
         # value and has no way to say "anything else", so the field cannot round
         # trip: dropping the key would decode an unmapped value as absent where
         # the schema names it. Skipped rather than approximated.

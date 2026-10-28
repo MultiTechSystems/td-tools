@@ -157,8 +157,8 @@ def test_lookup_enum_round_trips_to_strings():
 def test_lookup_table_with_a_default_label_is_skipped_not_crashed():
     """A non-integer table key must skip its device, not abort the whole run.
 
-    A table may carry a ``default`` label covering every value it does not list
-    (PS-269). ``lorav:valueMap`` pairs one wire value with one decoded value and
+    A table may carry a ``default`` label covering every value it does not list.
+    ``lorav:valueMap`` pairs one wire value with one decoded value and
     cannot say "anything else", so the field is outside the subset.
 
     The reason it is a test rather than a note: the key was converted with a bare
